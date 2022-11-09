@@ -14,7 +14,27 @@ console.log(gridContainerEl);
 
 //creo evento al click del bottone
 btnCreateGridEl.addEventListener("click", function() {
-    createGrid(10, gridContainerEl);
+
+    // //BONUS:
+
+         const selectEL = document.querySelector(".select-hardle");
+         console.log(selectEL);
+         const opzione = selectEL.value;
+         console.log(opzione)
+       
+         if(opzione === 100){
+
+             createGrid(10, gridContainerEl);
+         }else if (opzione === 81){
+
+             createGrid(9, gridContainerEl);
+         } else if (opzione === 49){
+
+             createGrid(7, gridContainerEl);
+         }
+        // //Fine BONUS
+
+    //createGrid(10, gridContainerEl);
 } );
 
 /**
@@ -60,7 +80,8 @@ function createGrid (numcells, containerGrid ){
     }
 }
 
-    // const newcell = document.querySelector(".cell")
-    // console.log(newcell)
 
+
+
+        
 
