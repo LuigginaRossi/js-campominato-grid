@@ -44,10 +44,11 @@ function createGrid (numcells, containerGrid ){
         cellEL.style.flexBasis = `calc(100% / ${numcells})`;
         cellEL.style.border = `1px solid darkolivegreen`;
 
-        //mostro numero all'interno della cella:
-        cellEL.innerHTML= i;
+        
 
         cellEL.addEventListener("click", function(){
+            //mostro numero all'interno della cella:
+            cellEL.innerHTML= i;
 
             this.classList.toggle("bg-primary");
         });
