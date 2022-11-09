@@ -1,0 +1,9 @@
+body{
+    font-family: 'Permanent Marker', cursive;
+}
+
+.cell-grid{
+    flex-basis: 50px;
+    aspect-ratio: 1/1;
+    border: 1px dashed darkolivegreen;
+}
