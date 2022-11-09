@@ -14,7 +14,6 @@ console.log(gridContainerEl);
 
 //creo evento al click del bottone
 btnCreateGridEl.addEventListener("click", function() {
-
     // //BONUS:
 
          const selectEL = document.querySelector(".select-hardle");
