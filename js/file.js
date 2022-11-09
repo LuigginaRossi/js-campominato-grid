@@ -4,45 +4,62 @@
 // Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
 
 //trovo bottone nell'html
-const btnCreateGrid = document.querySelector(".btn-create-grid");
-console.log(btnCreateGrid);
+const btnCreateGridEl = document.querySelector(".btn-create-grid");
+console.log(btnCreateGridEl);
 
 //trovo contenitore griglia:
-const gridContainer = document.querySelector(".grid-container");
-console.log(gridContainer);
+const gridContainerEl = document.querySelector(".grid-container");
+console.log(gridContainerEl);
+
 
 //creo evento al click del bottone
-btnCreateGrid.addEventListener("clik", createGrid );
+btnCreateGridEl.addEventListener("click", function() {
+    createGrid(10, gridContainerEl);
+} );
 
-//funzione generatrice della griglia:
-createGrid(10, gridContainer);
 /**
- * 
+ * Crea celle della griglia:
  * @param {number} numcells 
+ * @param {Element} containerGrid
  */
 function createGrid (numcells, containerGrid ){
 
     //riazzero il contenuto del mio container:
+    //NON FUNZIONA:
     containerGrid.innerHTML = "";
 
     // Al suo interno quante celle voglio creare? 
     //numero totale di celle alla seconda
     totalCells = Math.pow(numcells,2);
 
-    //uso ciclo for:
-    for (let i  = 0; i  < totalCells; i ++) {
-         
+    //uso ciclo for per creare le singole celle:
+    for (let i  = 1; i  < totalCells + 1 ; i ++) {
+
         //creo cella:
         const cellEL = document.createElement("div");
         console.log(cellEL)
         
         //attribuisco clssi e proprietà:
         cellEL.classList.add("cell");
-        cellEL.style.flexBasis = `calc(100% / ${numcells}) `;
+        cellEL.style.flexBasis = `calc(100% / ${numcells})`;
         cellEL.style.border = `1px solid darkolivegreen`;
+
+        //mostro numero all'interno della cella:
+        cellEL.innerHTML= i;
+
+        cellEL.addEventListener("click", function(){
+
+            this.classList.toggle("bg-primary");
+        });
+
 
         //inserisco elemento creato nel contenitore griglia:
         containerGrid.append(cellEL);
-    }
 
+    }
 }
+
+    // const newcell = document.querySelector(".cell")
+    // console.log(newcell)
+
+

@@ -3,7 +3,10 @@ body{
 }
 
 .cell{
-    /* flex-basis: 50px; */
     aspect-ratio: 1/1;
-    border: 1px dashed darkolivegreen;
+}
+
+.bg-cell{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,148,233,1) 100%);
 }
