@@ -18,19 +18,20 @@ btnCreateGridEl.addEventListener("click", function() {
 
          const selectEL = document.querySelector(".select-hardle");
          console.log(selectEL);
-         const opzione = selectEL.value;
+         const opzione = Math.sqrt(+selectEL.value);
          console.log(opzione)
        
-         if(opzione === 100){
+         createGrid(opzione, gridContainerEl)
+        //  if(opzione === 100){
 
-             createGrid(10, gridContainerEl);
-         }else if (opzione === 81){
+        //      createGrid(10, gridContainerEl);
+        //  }else if (opzione === 81){
 
-             createGrid(9, gridContainerEl);
-         } else if (opzione === 49){
+        //      createGrid(9, gridContainerEl);
+        //  } else if (opzione === 49){
 
-             createGrid(7, gridContainerEl);
-         }
+        //      createGrid(7, gridContainerEl);
+        //  }
         // //Fine BONUS
 
     //createGrid(10, gridContainerEl);
@@ -44,7 +45,6 @@ btnCreateGridEl.addEventListener("click", function() {
 function createGrid (numcells, containerGrid ){
 
     //riazzero il contenuto del mio container:
-    //NON FUNZIONA:
     containerGrid.innerHTML = "";
 
     // Al suo interno quante celle voglio creare? 
